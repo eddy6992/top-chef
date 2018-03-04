@@ -4,7 +4,7 @@ let cheerio = require('cheerio');                                               
 let jsonframe = require('jsonframe-cheerio');                                   // et jsonframe-cheerio
 
 axios('https://restaurant.michelin.fr/restaurants-etoiles-france').then((response) => {                      // on demande ici à axios d'aller sur growthhacking.fr, si la réponse est bonne...
-    fs.writeFileSync('gh.html', response.data);                                 // alors fs enregistre le code html dans le fichier gh.html
+    fs.writeFileSync('restaurant.html', response.data);                                 // alors fs enregistre le code html dans le fichier restaurant.html
     if (response.status === 200) {                                              // si la réponse du serveur est 200 OK
         let $ = cheerio.load(response.data);                                    // on enregistre le contenu html dans une variable $
         jsonframe($);                                                           // cette dernière est placée dans une jsonframe
@@ -12,11 +12,12 @@ axios('https://restaurant.michelin.fr/restaurants-etoiles-france').then((respons
            "post": {
               /* to do */
             }
+            
         };
 
 
         var postsList = $('body ').scrape(frame);                                // on créé une varibale postsList qui reprend les posts scrapés dans le body
-        fs.writeFile('gh.json', JSON.stringify(postsList), function (err) {     // fs.WriteFile nous permet d'enregistrer nos données stockées dans postsList
+        fs.writeFile('restaurant.json', JSON.stringify(postsList), function (err) {     // fs.WriteFile nous permet d'enregistrer nos données stockées dans postsList
             if (err) {
                 return console.log(err);                                        // y'a un blème ?
             } else {

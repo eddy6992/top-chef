@@ -1,14 +1,38 @@
 {
   "name": "top-chef",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "version": "0.0.1",
+  "description": "Provides the current deals from Lafourchette for Michelin French starred restaurants.",
+  "main": "app.js",
+  "author": "eddy6992",
   "dependencies": {
-    "request": "^2.81.0"
-  }
+    "bootstrap": "latest",
+    "cheerio": "^1.0.0-rc.2",
+    "elasticsearch": "^14.1.0",
+    "express": "latest",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^1.1.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddy6992/top-chef.git" 
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eddy6992/top-chef/issues"
+  },
+  "homepage": "https://github.com/eddy6992/top-chef#readme"
 }

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+  <!--[if IEMobile 7]><html class="no-js ie iem7" lang="fr" dir="ltr"><![endif]-->
+  <!--[if lte IE 6]><html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="fr" dir="ltr"><![endif]-->
+  <!--[if (IE 7)&(!IEMobile)]><html class="no-js ie lt-ie9 lt-ie8" lang="fr" dir="ltr"><![endif]-->
+  <!--[if IE 8]><html class="no-js ie lt-ie9" lang="fr" dir="ltr"><![endif]-->
+  <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js ie" lang="fr" dir="ltr"><![endif]-->
+  <!--[if !IE]><!--><html class="no-js" lang="fr" dir="ltr"><!--<![endif]-->
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<link rel="apple-touch-icon-precomposed" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed.png" />
+<meta http-equiv="cleartype" content="on" />
+<link rel="apple-touch-icon-precomposed" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed-114x114.png" sizes="114x114" />
+<link rel="apple-touch-icon-precomposed" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed-72x72.png" sizes="72x72" />
+<meta http_equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="apple-touch-icon-precomposed" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/contrib/omega/omega/apple-touch-icon-precomposed-144x144.png" sizes="144x144" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+<link rel="shortcut icon" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://restaurant.michelin.fr/restaurants-etoiles-france" />
+<link rel="shortlink" href="https://restaurant.michelin.fr/restaurants-etoiles-france" />
+  <title>Les restaurants étoilés Michelin | MICHELIN Restaurants</title>
+  <link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_kQC7TIiuOUL-has6d3UlPcvL5d-J-ZBynxHRlanIpb4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_dfs3GRus8CYyIHRtpw08GE7SFR_3Av6luCOKE-dd_Zk.css" media="all" />
+<style>#sliding-popup.sliding-popup-bottom{background:#FFFFFF;}#sliding-popup .popup-content #popup-text h2,#sliding-popup .popup-content #popup-text p{color:#000000 !important;}
+</style>
+<link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_LnpaqQXxE2nCYN6lt14KkcSEmm5I2AgBfE1zpjsmhVY.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/css/css_XNQxBwnCVpONXHvxWBw0SAS_fFzwuLEU6LIsSzYjgBk.css" media="all" />
+  <script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_jUGMAWXyVvwzUHrnLYAOC20Z5Zo2RFUW2xbLBM2kqrc.js"></script>
+<script src="//cdn.optimizely.com/js/7256613505.js"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_udcHSqrT8obj883DL8Bqax4YlQqMU6Wti5Wzif9KQL8.js"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_6uMVSUgDf9ldb_NCxvCamFQoenOq-XcovWYUCJT4HIU.js"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_OrrBOXJ_Q4WqWNH0C2suqZhlulBINdrGWMTINM0CogY.js"></script>
+<script src="https://apijsv2.viamichelin.com/apijsv2/api/js?key=JSBS20160513115841247657803235$170883&amp;lang=fra&amp;protocol=https"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_wwTPHyf721Wl7_QP2x0qZGxAOvOTRTzw5lofZ0NBVF8.js"></script>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_2ciTPq16fzgZbD14tKmuSyMkAHTkKiONPObTPwearHA.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","autocomplete_limit":{"limit":"2"},"ajaxPageState":{"theme":"michelin","theme_token":"1u9RwQGecuC9DeUybS6yl0kxw_QbcU6vSSJyiiEzwpY","jquery_version":"1.10","js":{"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/eu_cookie_compliance\/js\/eu_cookie_compliance.js":1,"0":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/clientside_validation\/clientside_validation.ie8.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/clientside_validation\/clientside_validation.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/js\/no-js.js":1,"\/\/cdn.optimizely.com\/js\/7256613505.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.accordion.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/select2\/js\/Drupal.select2.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/lazyloader\/jquery.lazyloader.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_booking\/js\/mr_b2c_booking_tracking.js":1,"public:\/\/languages\/fr_IJaSK4YhKiriViaMXuWyKNURD6Te1bUNHhqcra1oL4U.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/accordion_blocks\/accordion_init.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/ajax-responder.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/modal.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/clientside_validation\/jquery-validate\/jquery.validate.js":1,"sites\/mtpb2c_fr\/libraries\/select2\/select2.js":1,"sites\/mtpb2c_fr\/libraries\/select2\/select2_locale_fr.js":1,"misc\/autocomplete.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/autocomplete_limit\/js\/autocomplete.limit.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi_search\/js\/ft_b2c_poi_search_form.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_poi_search\/js\/ft_b2c_poi_search.ajax.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_footer_blocks\/js\/ft_b2c_footer_blocks.js":1,"https:\/\/apijsv2.viamichelin.com\/apijsv2\/api\/js?key=JSBS20160513115841247657803235$170883\u0026lang=fra\u0026protocol=https":1,"sites\/mtpb2c_fr\/libraries\/slideout\/slideout.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_sliding_menu\/js\/ft_b2c_sliding_menu.js":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/mr_b2c_seo\/js\/mr_b2c_seo_gtm.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/js\/jquery.sticky-kit.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/js\/readmore.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/js\/jquery.dotdotdot.js":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/js\/script.js":1},"css":{"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.base.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.menus.theme.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.messages.theme.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/office_hours\/office_hours.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/field\/field.theme.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/lazyloader\/lazyloader.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/user\/user.base.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/contrib\/omega\/omega\/css\/modules\/user\/user.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/accordion_blocks\/accordion_init.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/panels\/css\/panels.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/panels\/plugins\/layouts\/flexible\/flexible.css":1,"public:\/\/ctools\/css\/f9e2f9439d5fb44ff07b1e73e6b6a57f.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/modal.css":1,"0":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/eu_cookie_compliance\/css\/eu_cookie_compliance.css":1,"sites\/mtpb2c_fr\/libraries\/select2\/select2.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/select2\/css\/select2_integration.css":1,"sites\/mtpb2c_fr\/modules\/mtpb2c\/custom\/features\/ft_b2c_sliding_menu\/css\/ft_b2c_sliding_menu.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/restaurant_base\/css\/restaurant.normalize.css":1,"sites\/mtpb2c_fr\/themes\/mtpb2c\/custom\/michelin\/css\/restaurant.styles.css":1}},"CToolsModal":{"loadingText":"Loading...","closeText":"Close Window","closeImage":"\u003Cimg data-src=\u0022https:\/\/restaurant.michelin.fr\/sites\/all\/modules\/contrib\/ctools\/images\/icon-close-window.png\u0022 src=\u0022https:\/\/restaurant.michelin.fr\/sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/lazyloader\/image_placeholder.gif\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E\u003Cnoscript\u003E\u003Cimg src=\u0022https:\/\/restaurant.michelin.fr\/sites\/all\/modules\/contrib\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E\u003C\/noscript\u003E","throbber":"\u003Cimg data-src=\u0022https:\/\/restaurant.michelin.fr\/sites\/all\/modules\/contrib\/ctools\/images\/throbber.gif\u0022 src=\u0022https:\/\/restaurant.michelin.fr\/sites\/mtpb2c_fr\/modules\/mtpb2c\/contrib\/lazyloader\/image_placeholder.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E\u003Cnoscript\u003E\u003Cimg src=\u0022https:\/\/restaurant.michelin.fr\/sites\/all\/modules\/contrib\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E\u003C\/noscript\u003E"},"select_2":{"elements":{"edit-cooking-type":{"placeholder":"Tous les types de cuisine","allowClear":false}},"excludes":{"by_id":{"values":[],"reg_exs":[]},"by_class":[],"by_selectors":[]},"branch":3,"default_settings":{"separator":"\u00b6","jqui_sortable":false,"dropdownAutoWidth":true,"width":"element","containerCssClass":"","minimumResultsForSearch":15},"process_all_selects_on_page":true,"no_version_check":false,"settings_updated":true},"eu_cookie_compliance":{"popup_enabled":1,"popup_agreed_enabled":0,"popup_hide_agreed":1,"popup_clicking_confirmation":0,"popup_html_info":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003EEn continuant \u00e0 naviguer sur notre site, vous acceptez que nous utilisions des cookies pour mesurer l\u0027audience de notre site et vous proposer des contenus selon vos centres d\u0027int\u00e9r\u00eats. \u003Ca href=\u0022http:\/\/restaurant.michelin.fr\u0022\u003EEn savoir plus et g\u00e9rer les param\u00e8tres.\u003C\/a\u003E\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button\u0022\u003EOui\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button\u0022\u003ENon\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","popup_html_agreed":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content agreed\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n          \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022hide-popup-button\u0022\u003E\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button\u0022 \u003E\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/restaurant.michelin.fr","popup_link_new_window":1,"popup_position":null,"popup_language":"fr","domain":"","cookie_expiration_period":15},"urlIsAjaxTrusted":{"\/search-restaurants-quick":true,"\/restaurants\/santenay":true},"clientsideValidation":{"forms":{"ft-b2c-poi-search-block-form":{"errorPlacement":5,"general":{"errorClass":"error","wrapper":"li","validateTabs":"","scrollTo":1,"scrollSpeed":1000,"disableHtml5Validation":1,"validateOnBlur":1,"validateOnBlurAlways":0,"validateOnKeyUp":"0","validateBeforeAjax":"1","validateOnSubmit":1,"showMessages":0,"errorElement":"label"},"rules":{"text":{"maxlength":128,"messages":{"maxlength":"O\u00f9 ? field has to have maximum 128 values."}}}}},"general":{"usexregxp":0,"months":{"Janvier":1,"Jan":1,"F\u00e9vrier":2,"Fev":2,"Mars":3,"Mar":3,"Avril":4,"Avr":4,"Mai":5,"Juin":6,"Juillet":7,"Jui":7,"Ao\u00fbt":8,"Octobre":10,"Sep":9,"Oct":10,"Novembre":11,"Nov":11,"D\u00e9cembre":12,"Dec":12}},"groups":{"ft-b2c-poi-search-block-form":{}}}});</script>
+</head>
+<body class="html not-front not-logged-in page-restaurants-etoiles-france i18n-fr section-restaurants-etoiles-france">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WNBQ4S" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WNBQ4S');</script>
+<!-- End Google Tag Manager -->
+  <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    
+<div class="l-page">
+  <header class="l-header clearfix" role="banner">
+    <div class="l-header-inner">
+        <div class="l-region l-region--header">
+    <div id="block-ft-b2c-sliding-menu-ft-b2c-sliding-menu-sliding-menu" class="block block--ft-b2c-sliding-menu block--ft-b2c-sliding-menu-ft-b2c-sliding-menu-sliding-menu">
+        <div class="block__content">
+    <div class="header-menu-trigger-wrapper"><a href="#navbar" class="hamburger js-slideout-toggle"><span>Menu</span></a></div>  </div>
+</div>
+<div id="block-mr-b2c-header-blocks-mr-b2c-header-blocks-site-name" class="block block--mr-b2c-header-blocks block--mr-b2c-header-blocks-mr-b2c-header-blocks-site-name">
+        <div class="block__content">
+    <div class="site-name"><a href="/" class="michelin-header__logo"></a></div>  </div>
+</div>
+  </div>
+        <div class="l-region l-region--sub-header">
+    <nav id="block-system-main-menu" role="navigation" class="block block--system block--menu block--system-main-menu">
+      
+  <ul class="menu"><li class="first last leaf"><a href="/instants-michelin">Instants Michelin</a></li>
+</ul></nav>
+<div id="block-mr-b2c-header-blocks-mr-b2c-header-blocks-logo" class="block block--mr-b2c-header-blocks block--mr-b2c-header-blocks-mr-b2c-header-blocks-logo">
+        <div class="block__content">
+    <div class="site-logo"><a href="https://restaurant.michelin.fr" title="Accueil" rel="Accueil" class="logo"><img class="header-michelin-logo" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/logo.png" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" alt="MICHELIN Restaurants" title="MICHELIN Restaurants" /><noscript><img class="header-michelin-logo" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/logo.png" alt="MICHELIN Restaurants" title="MICHELIN Restaurants" /></noscript></a></div>  </div>
+</div>
+
+<div class="search-button-wrapper">
+  <div class="search-icon search-icon-open icon-mr icon-search"></div>
+  <div class="search-icon search-icon-close icon-mr icon-croix01"></div>
+</div>
+  </div>
+    </div>
+  </header>
+
+  <div class="l-content-wrapper">
+    <div class="l-overlay"></div>
+    <div class="l-main-prefix">
+                <div class="l-region l-region--main-prefix">
+    <div id="block-ft-b2c-poi-search-ft-b2c-poi-search-form" class="block block--ft-b2c-poi-search block--ft-b2c-poi-search-ft-b2c-poi-search-form">
+        <div class="block__content">
+    <form class="mr-poi-search-form ft-b2c-poi-search-block-form" action="/search-restaurants-quick" method="get" id="ft-b2c-poi-search-block-form" accept-charset="UTF-8"><div><div class="ft-b2c-poi-search-form ft-b2c-poi-search-form-other form-wrapper" id="edit-content"><input attr-text="" type="hidden" name="localisation" value="" />
+<div class="form-item form-type-textfield form-item-text">
+  <label for="edit-text">Où ? </label>
+ <input data-limit="2" placeholder="Ville / Nom de restaurant" type="text" id="edit-text" name="text" value="" size="60" maxlength="128" class="form-text form-autocomplete" /><input type="hidden" id="edit-text-autocomplete" value="https://restaurant.michelin.fr/index.php?q=search/autocomplete" disabled="disabled" class="autocomplete" /> <span class="field-suffix"><span class="around-me-search" title="Search nearby restaurants"></span></span>
+</div>
+<div class="form-item form-type-select form-item-cooking-type">
+  <label for="edit-cooking-type">Quoi ? </label>
+ <select class="use-select-2 form-select" id="edit-cooking-type" name="cooking_type"><option value="" selected="selected">Tous les types de cuisine</option><option value="516">Asiatique</option><option value="256">Bistrot, Brasserie, Bar à vin</option><option value="321">Poissons, Fruits de Mer</option><option value="306">Gastronomique</option><option value="366">Viandes, Grillades</option><option value="1101">Italien</option><option value="596">Japonais</option><option value="291">Cuisine Moderne, Créative</option><option value="931">Cuisine Régionale Française</option><option value="351">Traditionnel, Classique</option></select>
+</div>
+<div class="form-item form-type-checkbox form-item-gm-selection">
+ <input type="checkbox" id="edit-gm-selection" name="gm_selection" value="1" class="form-checkbox" />  <label class="option" for="edit-gm-selection">Sélection du guide MICHELIN </label>
+
+</div>
+<input class="use-ajax-submit form-submit" type="submit" id="edit-submit" name="op" value="Rechercher" /></div><input type="hidden" name="latitude" value="" />
+<input type="hidden" name="longitude" value="" />
+<input type="hidden" name="form_build_id" value="form-GKdf2mp3LUviGU2M92qpUbzifI_j7vJB6jdTQb1xVw0" />
+<input type="hidden" name="form_id" value="ft_b2c_poi_search_block_form" />
+</div></form>  </div>
+</div>
+  </div>
+          </div>
+
+    <div class="l-main" role="main">
+      <div class="l-content clearfix">
+        <div class="l-content-inner">
+          <div class="l-breadcrumbs">
+                      </div>
+                                                <h1>Les restaurants étoilés Michelin</h1>
+                                                                                  </div>
+        <div class="panel-flexible panels-flexible-51 clearfix" >
+<div class="panel-flexible-inside panels-flexible-51-inside">
+<div class="panels-flexible-region panels-flexible-region-51-center panels-flexible-region-first panels-flexible-region-last">
+  <div class="inside panels-flexible-region-inside panels-flexible-region-51-center-inside panels-flexible-region-inside-first panels-flexible-region-inside-last">
+<div class="panel-pane pane-block pane-bean-links-etoiles-directory">
+  <div class="panel-pane-inside">
+                        <div class="entity entity-bean bean-list-of-links clearfix" class="entity entity-bean bean-list-of-links">
+
+  <div class="content">
+    <div class="block-title">
+            <h2 class="title">Retrouvez tous les restaurants étoilés dans votre ville!</h2>
+    </div>
+    <div class="field field--name-field-links field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/paris-01/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 01</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/paris-02/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 02</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/paris-04/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 04</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/paris-05/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 05</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/paris-06/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 06</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/paris-07/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 07</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/paris-08/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 08</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/paris-11/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 11</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/paris-12/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 12</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/paris-14/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 14</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/paris-15/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 15</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/paris-16/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 16</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/paris-17/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 17</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/paris-19/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Paris 19</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/lyon-01/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Lyon 01</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/lyon-02/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Lyon 02</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/lyon-03/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Lyon 03</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/lyon-05/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Lyon 05</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/lyon-06/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Lyon 06</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/lyon-09/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Lyon 09</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/mulhouse/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Mulhouse</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/saint-malo/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Saint-Malo</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/caen/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Caen</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/beziers/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Béziers</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/calvi/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Calvi</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/angers/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Angers</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/saint-tropez/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Saint Tropez</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/grasse/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Grasse</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/lorient/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Lorient</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/colmar/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Colmar</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/versailles/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Versailles</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/rouen/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Rouen</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/nancy/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Nancy</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/nevers/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Nevers</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/perigueux/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Périgueux</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/montauban/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Montauban</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/rennes/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Rennes</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/la-rochelle/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés La Rochelle</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/albi/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Albi</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/le-havre/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Le Havre</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/deauville/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Deauville</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/bayonne/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Bayonne</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/neuilly-sur-seine/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Neuilly-sur-Seine</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/saint-martin-de-belleville/val-thorens/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Val-Thorens</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/montbeliard/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Montbéliard</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/perpignan/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Perpignan</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/le-mans/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Le Mans</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/ambierle/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Ambierle</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/agen/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Agen</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/amboise/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Amboise</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/aix-en-provence/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Aix-en-Provence</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/dury/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Dury</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/annecy-le-vieux/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Annecy</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/antibes/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Antibes</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/arbois/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Arbois</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/arcachon/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Arcachon</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/les-arcs/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Les Arcs</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/arles/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Arles</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/aumont-aubrac/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Aumont-Aubrac</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/avignon/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Avignon</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/le-bar-sur-loup/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Le Bar-sur-Loup</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/la-baule/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés La Baule</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/les-baux-de-provence/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Les Baux-de-Provence</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/bayeux/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Bayeux</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/beaulieu-sur-mer/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Beaulieu-sur-Mer</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/beaune/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Beaune</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/pernand-vergelesses/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Pernand-Vergelesses</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/levernois/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Levernois</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/belcastel/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Belcastel</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/danjoutin/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Danjoutin</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/belle-eglise/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Belle-Église</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/meurthe-et-moselle/belleville/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Belleville</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/monbazillac/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Moulin de Malfourat</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/beuvron-en-auge/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Beuvron-en-Auge</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/biarritz/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Biarritz</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/arcangues/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Arcangues</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/bidart/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Bidart</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/biot/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Biot</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/bitche/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Bitche</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/blois/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Blois</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/bonnetage/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Bonnétage</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/bonnieux/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Bonnieux</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/bordeaux/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Bordeaux</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/cenon/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Cenon</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/bouliac/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Bouliac</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/martillac/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Martillac</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/bosdarros/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Bosdarros</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/boulogne-sur-mer/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Boulogne-sur-Mer</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/le-bourg-dun/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Le Bourg-Dun</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/peronnas/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Péronnas</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/bourges/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Bourges</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/le-bourget-du-lac/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Le Bourget-du-Lac</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/bray-et-lu/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Bray-et-Lû</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/brest/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Brest</a></div><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/le-breuil-en-auge/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Le Breuil-en-Auge</a></div><div class="field__item odd"><a href="https://restaurant.michelin.fr/restaurants/lamagdelaine/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin/">&gt;Restaurants étoilés Lamagdelaine</a></div></div></div>      </div>
+
+</div>
+          </div>
+</div>
+<div class="panel-pane pane-block pane-block-21">
+  <div class="panel-pane-inside">
+                        <p>&nbsp; &nbsp; 1 - <a href="https://restaurant.michelin.fr/restaurants-etoiles-france/page-2/">2</a> - <a href="http://restaurant.michelin.fr/restaurants-etoiles-france/page-3/">3</a> - <a href="http://restaurant.michelin.fr/restaurants-etoiles-france/page-4/">4</a> - <a href="http://restaurant.michelin.fr/restaurants-etoiles-france/page-5/">5</a></p>
+          </div>
+</div>
+  </div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+
+          <div class="l-main-suffix">
+          <div class="l-region l-region--main-suffix">
+    <div id="block-views-city-list-inline-city-top" class="block block--views block--views-city-list-inline-city-top">
+        <h2  class="block__title">Top Villes</h2>
+      <div class="block__content">
+    <div class="view view-city-list view-id-city_list view-display-id-inline_city_top view-dom-id-e2d610d8c1b92720890dd389ca101b71">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row-odd views-row-first">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+  
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/paris">Paris</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-even">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+  
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/bordeaux">Bordeaux</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-odd">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+  
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/nantes">Nantes</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-even">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+  
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/strasbourg">Strasbourg</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-odd">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+  
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/lyon">Lyon</a></div></div></div></div>
+
+  </div>
+  <div class="views-row-even views-row-last">
+    <div  class="ds-1col node node--city view-mode-inline node--inline node--city--inline clearfix">
+
+  
+  <div class="field field--name-field-link field--type-link-field field--label-hidden"><div class="field__items"><div class="field__item even"><a href="https://restaurant.michelin.fr/restaurants/lille">Lille</a></div></div></div></div>
+
+  </div>
+    </div>
+  
+  
+      <div class="attachment attachment-after">
+      <a href="/recherche-restaurants" class="restaurant-directory-link">Annuaire des restaurants</a>    </div>
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+      </div>
+    
+    <footer class="l-footer" role="contentinfo">
+      <div class="l-footer-inner">
+        <div class="l-footer-top">
+                  </div>
+        <div class="l-footer-top-suffix">
+                  </div>
+        <div class="l-footer-middle">
+            <div class="l-region l-region--footer-middle">
+    <nav id="block-menu-menu-corporate-menu-1" role="navigation" class="block block--menu block--menu-menu-corporate-menu-1">
+      <div  class="block__title">Restaurateurs</div>
+    
+  <ul class="menu"><li class="first leaf"><a href="http://gastronomie.bookatable.fr/" target="_blank">Découvrez nos offres</a></li>
+<li class="last leaf"><a href="https://login.bookatable.com/login?language=fr-FR" target="_blank">Connectez-vous</a></li>
+</ul></nav>
+<nav id="block-menu-menu-corporate-menu-2" role="navigation" class="block block--menu block--menu-menu-corporate-menu-2">
+      <div  class="block__title">Suivez-nous</div>
+    
+  <ul class="menu"><li class="first leaf"><a href="https://www.facebook.com/guideMICHELINfr/" target="_blank">Sur Facebook</a></li>
+<li class="leaf"><a href="https://www.youtube.com/user/MichelinRestaurants" target="_blank">Sur Youtube</a></li>
+<li class="leaf"><a href="https://www.instagram.com/michelinguide/">Sur Instagram</a></li>
+<li class="last leaf"><a href="https://twitter.com/guideMichelinFR" target="_blank">Sur Twitter</a></li>
+</ul></nav>
+<nav id="block-menu-menu-corporate-menu-3" role="navigation" class="block block--menu block--menu-menu-corporate-menu-3">
+      <div  class="block__title">Nos autres services</div>
+    
+  <ul class="menu"><li class="first leaf"><a href="https://bda.bookatable.com/Mobile/CancelBooking?inIframe=False&amp;cid=INTL-BOOKATABLEMASTER:76677&amp;lang=fr-FR" target="_blank">Annulez une réservation</a></li>
+<li class="leaf"><a href="http://www.bookatable.co.uk/" target="_blank">Réservez en Angleterre</a></li>
+<li class="last leaf"><a href="https://www.bookatable.com/de" target="_blank">Réservez en Allemagne</a></li>
+</ul></nav>
+<nav id="block-menu-menu-corporate-menu-4" role="navigation" class="block block--menu block--menu-menu-corporate-menu-4">
+      <div  class="block__title">MICHELIN GROUPE</div>
+    
+  <ul class="menu"><li class="first leaf"><a href="http://www.michelin.fr/lentreprise/michelin-en-france" target="_blank">L&#039;entreprise Michelin</a></li>
+<li class="leaf"><a href="http://www.michelin.fr/pneus/pneu-auto?gclid=CK7W2L-OitACFRa3Gwods08GpQ&amp;gclsrc=aw.ds#type=type_2" target="_blank">Les pneus Michelin</a></li>
+<li class="leaf"><a href="http://voyages.michelin.fr/" target="_blank">Michelin Voyage</a></li>
+<li class="leaf"><a href="https://www.viamichelin.fr/web/Itineraires" target="_blank">ViaMichelin</a></li>
+<li class="last leaf"><a href="http://www.michelin.fr/mobility-apps" target="_blank">Michelin Mobility Apps</a></li>
+</ul></nav>
+<div id="block-ft-b2c-footer-blocks-footer-newsletter" class="block block--ft-b2c-footer-blocks block--ft-b2c-footer-blocks-footer-newsletter">
+        <div class="newsletter-primary-title">
+      <div  class="block__title">Newsletter MICHELIN Restaurants</div>
+    </div>
+
+          <div class="newsletter-secondary-title">
+        <div  class="block__title">Profitez des bons plans MICHELIN Restaurants en vous inscrivant à la newsletter :</div>
+      </div>
+      
+  
+  <div class="block__content">
+    <form class="mr-b2c-footer-newsletter-form ft-b2c-footer-blocks-form" action="/restaurants/santenay" method="post" id="ft-b2c-footer-blocks-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-email">
+ <input placeholder="Email" type="text" id="edit-email" name="email" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<input type="submit" id="edit-submit--3" name="op" value="Ok" class="form-submit" /><input type="hidden" name="form_build_id" value="form-z_2lneOMnnm7pUWothv5dRfYImg9dnLwC5pxcGg7FkY" />
+<input type="hidden" name="form_id" value="ft_b2c_footer_blocks_form" />
+</div></form>  </div>
+</div>
+<div id="block-accordion-blocks-footer-menu-and-newsletter-1" class="block block--accordion-blocks block--accordion-blocks-footer-menu-and-newsletter-1">
+        <h2  class="block__title">Footer menu and newsletter</h2>
+      <div class="block__content">
+    <div class="accordion_blocks_container">
+        <h2><a href="#">
+          Restaurateurs        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="http://gastronomie.bookatable.fr/" target="_blank">Découvrez nos offres</a></li>
+<li class="last leaf"><a href="https://login.bookatable.com/login?language=fr-FR" target="_blank">Connectez-vous</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          Suivez-nous        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="https://www.facebook.com/guideMICHELINfr/" target="_blank">Sur Facebook</a></li>
+<li class="leaf"><a href="https://www.youtube.com/user/MichelinRestaurants" target="_blank">Sur Youtube</a></li>
+<li class="leaf"><a href="https://www.instagram.com/michelinguide/">Sur Instagram</a></li>
+<li class="last leaf"><a href="https://twitter.com/guideMichelinFR" target="_blank">Sur Twitter</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          Nos autres services        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="https://bda.bookatable.com/Mobile/CancelBooking?inIframe=False&amp;cid=INTL-BOOKATABLEMASTER:76677&amp;lang=fr-FR" target="_blank">Annulez une réservation</a></li>
+<li class="leaf"><a href="http://www.bookatable.co.uk/" target="_blank">Réservez en Angleterre</a></li>
+<li class="last leaf"><a href="https://www.bookatable.com/de" target="_blank">Réservez en Allemagne</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          MICHELIN GROUPE        </a></h2>
+    <div>
+      <ul class="menu"><li class="first leaf"><a href="http://www.michelin.fr/lentreprise/michelin-en-france" target="_blank">L&#039;entreprise Michelin</a></li>
+<li class="leaf"><a href="http://www.michelin.fr/pneus/pneu-auto?gclid=CK7W2L-OitACFRa3Gwods08GpQ&amp;gclsrc=aw.ds#type=type_2" target="_blank">Les pneus Michelin</a></li>
+<li class="leaf"><a href="http://voyages.michelin.fr/" target="_blank">Michelin Voyage</a></li>
+<li class="leaf"><a href="https://www.viamichelin.fr/web/Itineraires" target="_blank">ViaMichelin</a></li>
+<li class="last leaf"><a href="http://www.michelin.fr/mobility-apps" target="_blank">Michelin Mobility Apps</a></li>
+</ul>    </div>
+          <h2><a href="#">
+          Newsletter MICHELIN Restaurants        </a></h2>
+    <div>
+      <form class="mr-b2c-footer-newsletter-form ft-b2c-footer-blocks-form--2" action="/restaurants/santenay" method="post" id="ft-b2c-footer-blocks-form--2" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-email">
+ <input placeholder="Email" type="text" id="edit-email--2" name="email" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<input type="submit" id="edit-submit--4" name="op" value="Ok" class="form-submit" /><input type="hidden" name="form_build_id" value="form-K3VhXkrXEQDIufhIopQZ-hY09Ci6_yzi_PDUknJ3Y7Q" />
+<input type="hidden" name="form_id" value="ft_b2c_footer_blocks_form" />
+</div></form>    </div>
+    </div>
+  </div>
+</div>
+  </div>
+        </div>
+        <div class="l-footer-sub-bottom">
+            <div class="l-region l-region--footer-sub-bottom">
+    <nav id="block-menu-menu-social-networks-left" role="navigation" class="block block--menu block--menu-menu-social-networks-left">
+      <div  class="block__title">Téléchargez notre application iOS</div>
+    
+  <ul class="menu"><li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-social-networks-left clearfix" class="entity entity-menu-fields menu-fields-menu-social-networks-left">
+  <div class="content">
+    <a href="https://itunes.apple.com/fr/app/michelin-restaurants-recherche/id523153222?mt=8" target="_blank" class="first last leaf icon-mr icon-apps"></a>  </div>
+</div>
+</li>
+</ul></nav>
+<nav id="block-menu-menu-social-networks-right" role="navigation" class="block block--menu block--menu-menu-social-networks-right">
+      <div  class="block__title">Téléchargez notre application Android</div>
+    
+  <ul class="menu"><li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-social-networks-right clearfix" class="entity entity-menu-fields menu-fields-menu-social-networks-right">
+  <div class="content">
+    <a href="https://play.google.com/store/apps/details?id=com.viamichelin.android.gm21" target="_blank" class="first last leaf icon-mr icon-android"></a>  </div>
+</div>
+</li>
+</ul></nav>
+  </div>
+        </div>
+        <div class="l-footer-bottom">
+            <div class="l-region l-region--footer-bottom">
+    <div id="block-ft-b2c-footer-blocks-footer-copyright" class="block block--ft-b2c-footer-blocks block--ft-b2c-footer-blocks-footer-copyright">
+        <div class="block__content">
+    <div class="footer-copyright-wrapper">
+ <div class="copyright-text">
+   &copy; MICHELIN 2018 </div>
+ <div class="copyright-menu">
+        <ul class="menu"><li class="first leaf"><a href="/conditions-generales-dutilisation">CGU</a></li>
+<li class="leaf"><a href="/donnees-personnelles">Données personnelles</a></li>
+<li class="leaf"><a href="/notice-legale">Notice légale</a></li>
+<li class="last leaf"><a href="/contactez-nous">Contactez-nous</a></li>
+</ul>    </div>
+</div>
+<div class="footer-logo">
+  <img class="footer-logo" id="footer-copyright-logo" data-src="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/img/logo_michelin_fr.png" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/modules/mtpb2c/contrib/lazyloader/image_placeholder.gif" alt="Michelin logo" title="Michelin" /><noscript><img class="footer-logo" id="footer-copyright-logo" src="https://restaurant.michelin.fr/sites/mtpb2c_fr/themes/mtpb2c/custom/michelin/img/logo_michelin_fr.png" alt="Michelin logo" title="Michelin" /></noscript></div>  </div>
+</div>
+  </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+        <noscript>
+        <style type="text/css" media="all">
+          img[data-src] { display: none !important; }
+        </style>
+      </noscript>
+<nav id="mr-b2c-sliding-menu">
+  <div class="menu-top-sliding-menu-one-wrapper">
+    <ul class="menu"><li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one clearfix" class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one">
+  <div class="content">
+    <a href="/magazine" class="first leaf icon-mr icon-partagez">Magazine</a>  </div>
+</div>
+</li>
+<li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one clearfix" class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one">
+  <div class="content">
+    <a href="/instants-michelin" class="leaf icon-mr icon-profitez">Instants MICHELIN</a>  </div>
+</div>
+</li>
+<li class="first last leaf"><div class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one clearfix" class="entity entity-menu-fields menu-fields-menu-top-sliding-menu-one">
+  <div class="content">
+    <a href="/guide-michelin" class="last leaf icon-mr icon-decouvrez">Guide MICHELIN</a>  </div>
+</div>
+</li>
+</ul>  </div>
+
+  <div class="menu-top-sliding-menu-two-wrapper">
+    <ul class="menu"><li class="first leaf"><a href="http://gastronomie.bookatable.fr/" target="_blank">Informations Restaurateurs</a></li>
+<li class="last leaf"><a href="https://login.bookatable.com/login?language=fr-FR" target="_blank">Accès Restaurateurs</a></li>
+</ul>  </div>
+</nav>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_Ob8B34_lR1D9xXrlwTN_QJWTkd6H9qer-oojHintHO8.js"></script>
+<script>      (function ($) {
+        Drupal.behaviors.lazyloader = {
+          attach: function (context, settings) {
+            $("img[data-src]").lazyloader({distance: 0, icon: "" });
+          }
+        };
+      }(jQuery));</script>
+
+<!--[if lt IE 9]>
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_q2d-qES5qoOARLZdLHKA3SOiGW20v1kS9ST2I3uipgc.js"></script>
+<![endif]-->
+<script src="https://restaurant.michelin.fr/sites/mtpb2c_fr/files/js/js_07j5zJCluA4uMWVWpNYSIuMyavDvmrARp9lYluJB8uU.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"778b962005","applicationID":"52774854","transactionName":"bwdRbBdUWUVRV0VaWVZNclsRXFhYH0RQVFNnD1JWBFJSRG9EUFRTZwdLXQZAQ1M=","queueTime":0,"applicationTime":375,"atts":"Q0BSGl9OSks=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
