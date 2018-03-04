@@ -25,7 +25,10 @@
 							var title = sel('.poi_intro-display-title').text();
 							var addr_Zip = sel('.addressfield-container-inline .postal-code').first().text();
 							var stars = sel('.michelin-poi-distinctions-list .content-wrapper').text().charAt(0);
-							var str = '{' + title + '"nom" : ' +  '"' +  '",' + ' "zip" : "' + addr_Zip + '", ' + '"Stars" : ' + '"' + stars + '"},\n';
+							var str = '{' + title +
+							 '"nom" : ' +  '"' +  '",' +
+							  ' "zip" : "' + addr_Zip + '", ' 
+							  + '"Stars" : ' + '"' + stars + '"},\n';
 							var myJSON = JSON.stringify(str);
 
 					fs.appendFile('michelin_all_restaurant.json', myJSON),function (err) {     // fs.WriteFile nous permet d'enregistrer nos données stockées dans postsList
