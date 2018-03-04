@@ -2,10 +2,10 @@
 	var cheerio = require('cheerio');
 	var fs = require('fs');
 	var maMap = new Map();
-	maMap.set(NaN, "not a number");
+	maMap.set(NaN, "not a number ");
 	var ets=0;
 
-
+//count the different restaurant on the different page 
 	for (cnt = 1; cnt<35; cnt++){
 		Firstpage = 'https://restaurant.michelin.fr/restaurants/france/restaurants-1-etoile-michelin/restaurants-2-etoiles-michelin/restaurants-3-etoiles-michelin'.concat('/page-',cnt);
 		request(Firstpage, function (error, response, html) {
@@ -25,6 +25,7 @@
 							var title = sel('.poi_intro-display-title').text();
 							var addr_Zip = sel('.addressfield-container-inline .postal-code').first().text();
 							var stars = sel('.michelin-poi-distinctions-list .content-wrapper').text().charAt(0);
+							
 							var str = '{' + title +
 							 '"nom" : ' +  '"' +  '",' +
 							  ' "zip" : "' + addr_Zip + '", ' 
